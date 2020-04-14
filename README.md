@@ -1,3 +1,5 @@
-# twitch.tv_clone
+# twitch.tv_clone (CRUD App)
 
-This app is a clone of twitch.tv, complete with authentication using Google Login. The app is build using React, Redux, React-Redux, Redux-Thunk. Users will be able to see available streams as well as start multiple streams in seperate categories. There are 2 API's, One being the Server of current streams available, and the second being the individual that is streaming to the Real Time server.
+### Overview
+
+This app is a clone of twitch.tv, complete with authentication using O Auth. Components: React, Redux, React-Redux, Redux-Thunk, React-Router. Users will be able to see available streams + select stream to view, as well as start multiple streams in seperate categories. There are 2 API's, One being the Server of current streams available, and the second being the individual that is streaming to the Real Time server. </br>
