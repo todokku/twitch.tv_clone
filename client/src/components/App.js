@@ -1,6 +1,6 @@
 import React from "react";
 import Home from "./Home";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 
 const App = () => {
   return (
@@ -24,7 +24,7 @@ const StartStream = () => {
       Start Your Stream. <br />
       <button
         onClick={(e) => {
-          console.log("Stream Started");
+          return <Redirect to="/" />;
         }}
       >
         Launch Client
