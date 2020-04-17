@@ -1,0 +1,8 @@
+Objectives:
+
+Build Components: 
+    a. Client Side - User Interface, Router Components, Google OAuth Authentication.
+    b. Server Side - API of Available Streams, Make API requests to Twitch API.
+
+Functionality:
+Routes for each "page" of app. On click event handlers etc.., 
