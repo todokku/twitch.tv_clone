@@ -1,6 +1,6 @@
 import React from "react";
 import Home from "./Home";
-import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 const App = () => {
   //exact keyword allows nested components to render without issues.
@@ -32,13 +32,9 @@ const StartStream = () => {
   return (
     <div>
       Start Your Stream. <br />
-      <button
-        onClick={(e) => {
-          return <Redirect to="/" />;
-        }}
-      >
-        Launch Client
-      </button>
+      <Link to="/">
+        <button>Launch Client</button>
+      </Link>
     </div>
   );
 };
