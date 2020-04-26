@@ -1,42 +1,24 @@
 import React from "react";
-import Home from "./Home";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+//
+import StreamIndex from "./streams/StreamIndex";
+import StreamCreate from "./streams/StreamCreate";
+import StreamShow from "./streams/StreamShow";
+import StreamEdit from "./streams/StreamEdit";
+import StreamDelete from "./streams/StreamDelete";
 
 const App = () => {
   //exact keyword allows nested components to render without issues.
   return (
     <Router>
       <div>
-        <Route path="/" exact component={Home} />
-        <Route path="/availablestreams" exact component={AvailableStreams} />
-        <Route path="/availablestreams/popular" component={PopularStreams} />
-        <Route path="/startstream" component={StartStream} />
+        <Route path="/" exact component={StreamIndex} />
+        <Route path="/streamcreate" component={StreamCreate} />
+        <Route path="/streamshow" component={StreamShow} />
+        <Route path="/streamedit" component={StreamEdit} />
+        <Route path="/streamdelete" component={StreamDelete} />
       </div>
     </Router>
   );
 };
-
-const AvailableStreams = () => {
-  return <div>These Are the Available Streams</div>;
-};
-
-const PopularStreams = () => {
-  return (
-    <div>
-      <h1>The Most Popular Streams Currently Available</h1>
-    </div>
-  );
-};
-
-const StartStream = () => {
-  return (
-    <div>
-      Start Your Stream. <br />
-      <Link to="/">
-        <button>Launch Client</button>
-      </Link>
-    </div>
-  );
-};
-
 export default App;
