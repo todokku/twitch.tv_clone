@@ -1,5 +1,5 @@
 import React from "react";
-
+//Start Stream here, enter title and topic of stream.
 const StreamCreate = () => {
   return (
     <div>

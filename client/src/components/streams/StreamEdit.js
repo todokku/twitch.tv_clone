@@ -1,5 +1,5 @@
 import React from "react";
-
+//edit title and topic of stream.
 const StreamEdit = () => {
   return (
     <div>

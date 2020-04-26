@@ -1,5 +1,5 @@
 import React from "react";
-
+//Main, Index of active streams available to view.
 const StreamIndex = () => {
   return (
     <div>

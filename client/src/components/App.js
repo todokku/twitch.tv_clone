@@ -10,15 +10,20 @@ import StreamDelete from "./streams/StreamDelete";
 const App = () => {
   //exact keyword allows nested components to render without issues.
   return (
-    <Router>
-      <div>
-        <Route path="/" exact component={StreamIndex} />
-        <Route path="/streamcreate" component={StreamCreate} />
-        <Route path="/streamshow" component={StreamShow} />
-        <Route path="/streamedit" component={StreamEdit} />
-        <Route path="/streamdelete" component={StreamDelete} />
-      </div>
-    </Router>
+    <div>
+      <header>
+        <nav className="navbar navbar-dark bg-dark"></nav>
+      </header>
+      <Router>
+        <div>
+          <Route path="/" exact component={StreamIndex} />
+          <Route path="/streamnew" component={StreamCreate} />
+          <Route path="/streamshow" component={StreamShow} />
+          <Route path="/streamedit" component={StreamEdit} />
+          <Route path="/streamdelete" component={StreamDelete} />
+        </div>
+      </Router>
+    </div>
   );
 };
 export default App;

@@ -1,5 +1,5 @@
 import React from "react";
-
+//Kill stream
 const StreamDelete = () => {
   return (
     <div>

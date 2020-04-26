@@ -1,5 +1,5 @@
 import React from "react";
-
+//view stream, vid player here with title of stream
 const StreamShow = () => {
   return (
     <div>
