@@ -1,33 +1,58 @@
-import React from 'react';
-import { Link, BrowserRouter as Router } from 'react-router-dom';
-
+import React from "react";
+import { Link, BrowserRouter as Router, Route } from "react-router-dom";
+import StreamIndex from "./streams/StreamIndex";
+import StreamCreate from "./streams/StreamCreate";
+import StreamShow from "./streams/StreamShow";
+import StreamEdit from "./streams/StreamEdit";
+import StreamDelete from "./streams/StreamDelete";
 const GlobalNav = () => {
-    return (
-        <div>
-            <Router>
-                <nav className="navbar navbar-light bg-light">
-                    <Link to="/">C-G-StreamLab</Link>
-                    <ul className="navbar-nav">
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/">Index</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/streamshow">Watch</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/streamnew">Create</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/streamedit">Edit</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/streamdelete">Delete</Link>
-                        </li>
-                    </ul>
-                </nav>
-            </Router>
-        </div>
-    )
-}
+  return (
+    <div>
+      <Router>
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+          <Link className="navbar-brand" to="/">
+            [CG]Streaming
+          </Link>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div className="navbar-nav">
+              <Link className="nav-item nav-link" to="/">
+                Index
+              </Link>
+              <Link className="nav-item nav-link" to="/streamshow">
+                View
+              </Link>
+              <Link className="nav-item nav-link" to="/streamnew">
+                Create
+              </Link>
+              <Link className="nav-item nav-link" to="/streamedit">
+                Edit
+              </Link>
+              <Link className="nav-item nav-link" to="/streamdelete">
+                Delete
+              </Link>
+            </div>
+          </div>
+        </nav>
+        ;
+        <Route path="/" exact component={StreamIndex} />
+        <Route path="/streamnew" component={StreamCreate} />
+        <Route path="/streamshow" component={StreamShow} />
+        <Route path="/streamedit" component={StreamEdit} />
+        <Route path="/streamdelete" component={StreamDelete} />
+      </Router>
+    </div>
+  );
+};
 
 export default GlobalNav;
