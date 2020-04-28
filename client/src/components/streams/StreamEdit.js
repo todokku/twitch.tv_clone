@@ -1,14 +1,11 @@
 import React from "react";
-//edit title and topic of stream.
+//edit title and topic of stream, also add description of stream
 const StreamEdit = () => {
   return (
     <div>
-      <h1>Edit Your Stream Here</h1>
+      <h1>Edit Your Stream</h1>
       <p>Options Here,</p>
-      <button type="submit">
-        <label>Submit Changes Here</label>
-        Submit
-      </button>
+      <button type="submit">Submit</button>
     </div>
   );
 };

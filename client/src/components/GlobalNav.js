@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, BrowserRouter as Router, Route } from "react-router-dom";
+import StreamHome from "./streams/StreamHome";
 import StreamIndex from "./streams/StreamIndex";
 import StreamCreate from "./streams/StreamCreate";
 import StreamShow from "./streams/StreamShow";
@@ -11,7 +12,7 @@ const GlobalNav = () => {
       <Router>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <Link className="navbar-brand" to="/">
-            [CG]Streaming
+            Vision
           </Link>
           <button
             className="navbar-toggler"
@@ -26,10 +27,28 @@ const GlobalNav = () => {
           </button>
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav">
-              <Link className="nav-item nav-link" to="/">
+              <Link className="nav-item nav-link" to="/index">
                 Index
               </Link>
-              <Link className="nav-item nav-link" to="/streamshow">
+            </div>
+          </div>
+        </nav>
+        <Route path="/" exact component={StreamHome} />
+        <Route path="/index" component={StreamIndex} />
+        <Route path="/streamnew" component={StreamCreate} />
+        <Route path="/streamshow" component={StreamShow} />
+        <Route path="/streamedit" component={StreamEdit} />
+        <Route path="/streamdelete" component={StreamDelete} />
+      </Router>
+    </div>
+  );
+};
+
+export default GlobalNav;
+
+/*
+These will be available after being logged into the stream. 
+<Link className="nav-item nav-link" to="/streamshow">
                 View
               </Link>
               <Link className="nav-item nav-link" to="/streamnew">
@@ -41,18 +60,4 @@ const GlobalNav = () => {
               <Link className="nav-item nav-link" to="/streamdelete">
                 Delete
               </Link>
-            </div>
-          </div>
-        </nav>
-        ;
-        <Route path="/" exact component={StreamIndex} />
-        <Route path="/streamnew" component={StreamCreate} />
-        <Route path="/streamshow" component={StreamShow} />
-        <Route path="/streamedit" component={StreamEdit} />
-        <Route path="/streamdelete" component={StreamDelete} />
-      </Router>
-    </div>
-  );
-};
-
-export default GlobalNav;
+*/
