@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, BrowserRouter as Router, Route } from "react-router-dom";
 import StreamHome from "./streams/StreamHome";
+import Login from "./streams/Login";
 import StreamIndex from "./streams/StreamIndex";
 import StreamCreate from "./streams/StreamCreate";
 import StreamShow from "./streams/StreamShow";
@@ -10,7 +11,7 @@ const GlobalNav = () => {
   return (
     <div>
       <Router>
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between">
           <Link className="navbar-brand" to="/">
             Vision
           </Link>
@@ -30,11 +31,15 @@ const GlobalNav = () => {
               <Link className="nav-item nav-link" to="/index">
                 Index
               </Link>
+              <Link className="nav-item nav-link" to="/login">
+                Login
+              </Link>
             </div>
           </div>
         </nav>
         <Route path="/" exact component={StreamHome} />
         <Route path="/index" component={StreamIndex} />
+        <Route path="/login" component={Login} />
         <Route path="/streamnew" component={StreamCreate} />
         <Route path="/streamshow" component={StreamShow} />
         <Route path="/streamedit" component={StreamEdit} />
@@ -47,6 +52,7 @@ const GlobalNav = () => {
 export default GlobalNav;
 
 /*
+Authenticate Login Process
 These will be available after being logged into the stream. 
 <Link className="nav-item nav-link" to="/streamshow">
                 View
