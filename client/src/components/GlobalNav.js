@@ -1,7 +1,6 @@
 import React from "react";
 import { Link, BrowserRouter as Router, Route } from "react-router-dom";
 import StreamHome from "./streams/StreamHome";
-import Login from "./streams/Login";
 import StreamIndex from "./streams/StreamIndex";
 import StreamCreate from "./streams/StreamCreate";
 import StreamShow from "./streams/StreamShow";
@@ -31,15 +30,17 @@ const GlobalNav = () => {
               <Link className="nav-item nav-link" to="/index">
                 Index
               </Link>
-              <Link className="nav-item nav-link" to="/login">
+              <div
+                className="g-signin2 nav-item nav-link"
+                data-onsuccess="onSignIn"
+              >
                 Login
-              </Link>
+              </div>
             </div>
           </div>
         </nav>
         <Route path="/" exact component={StreamHome} />
         <Route path="/index" component={StreamIndex} />
-        <Route path="/login" component={Login} />
         <Route path="/streamnew" component={StreamCreate} />
         <Route path="/streamshow" component={StreamShow} />
         <Route path="/streamedit" component={StreamEdit} />
@@ -67,3 +68,4 @@ These will be available after being logged into the stream.
                 Delete
               </Link>
 */
+//Oauth id: 536299701530-t8uf044eu68nu4mc9fbcqloa7lktf6u8.apps.googleusercontent.com
