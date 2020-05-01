@@ -1,4 +1,6 @@
 import React from "react";
+//Google Login Component
+import { GoogleLogin } from 'react-google-login';
 import { Link, BrowserRouter as Router, Route } from "react-router-dom";
 import StreamHome from "./streams/StreamHome";
 import StreamIndex from "./streams/StreamIndex";
@@ -6,6 +8,9 @@ import StreamCreate from "./streams/StreamCreate";
 import StreamShow from "./streams/StreamShow";
 import StreamEdit from "./streams/StreamEdit";
 import StreamDelete from "./streams/StreamDelete";
+const responseGoogle = (response) => {
+  console.log(response);
+}
 const GlobalNav = () => {
   return (
     <div>
@@ -30,12 +35,14 @@ const GlobalNav = () => {
               <Link className="nav-item nav-link" to="/index">
                 Index
               </Link>
-              <div
-                className="g-signin2 nav-item nav-link"
-                data-onsuccess="onSignIn"
-              >
-                Login
-              </div>
+              <GoogleLogin
+                className="nav-item nav-link "
+                clientId="536299701530-t8uf044eu68nu4mc9fbcqloa7lktf6u8.apps.googleusercontent.com"
+                buttonText="Login with Google"
+                onSuccess={responseGoogle}
+                onFailure={responseGoogle}
+                cookiePolicy={'single_host_origin'}
+              />
             </div>
           </div>
         </nav>
@@ -54,7 +61,7 @@ export default GlobalNav;
 
 /*
 Authenticate Login Process
-These will be available after being logged into the stream. 
+These will be available after being logged into the stream.
 <Link className="nav-item nav-link" to="/streamshow">
                 View
               </Link>
